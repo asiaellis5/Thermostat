@@ -1,5 +1,6 @@
 var Thermostat = function() {
   this.temperature = 20
+  this.resetTemp = 20
   this.minimumTemperature = 10
   this.powerSavingMode = true
   this.maximumTemperature = function() {
@@ -23,3 +24,6 @@ Thermostat.prototype.turnPowerSavingOff = function() {
     this.powerSavingMode = !this.powerSavingMode
 }
 
+Thermostat.prototype.reset = function() {
+  this.temperature = this.resetTemp
+}
