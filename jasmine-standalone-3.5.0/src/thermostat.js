@@ -1,3 +1,5 @@
+"use strict";
+
 var Thermostat = function() {
   this.temperature = 20
   this.resetTemp = 20
@@ -6,6 +8,7 @@ var Thermostat = function() {
   this.maximumTemperature = function() {
     return this.powerSavingMode ? 25 : 32
   }
+  this.currentUsage
 }
 
 Thermostat.prototype.increaseTemperature = function() {
@@ -27,3 +30,16 @@ Thermostat.prototype.turnPowerSavingOff = function() {
 Thermostat.prototype.reset = function() {
   this.temperature = this.resetTemp
 }
+
+Thermostat.prototype.currentEnergyUsage = function() {
+  if (this.temperature < 18) {
+    return("low-usage")
+  }
+  else if (this.temperature < 25) {
+    return("medium-usage")
+  }
+  else {
+    return("high-usage")
+  }
+}
+

@@ -1,3 +1,5 @@
+"use strict";
+
 describe("thermostat", function() {
   var thermostat;
   
@@ -11,13 +13,17 @@ describe("thermostat", function() {
   });
 
   it("increases temperature", function() {
+    for (var i = 0; i < 6; i++) {
     thermostat.increaseTemperature();
-    expect(thermostat.temperature).toEqual(21);
+    }
+    expect(thermostat.temperature).toEqual(25);
   });
 
   it("decreases the temperature", function() {
-    thermostat.decreaseTemperature();
-    expect(thermostat.temperature).toEqual(19);
+    for (var i = 0; i < 11; i++) {
+      thermostat.decreaseTemperature();
+    }
+    expect(thermostat.temperature).toEqual(10);
   });
 
   it("has a minimum temperature of 10 degrees", function() {
@@ -46,5 +52,28 @@ describe("thermostat", function() {
     thermostat.reset()
     expect(thermostat.temperature).toEqual(20)
   })
+  
+  it("shows low usage when temp is below 18", function() {
+    for ( var i = 0; i < 3; i++) {
+      thermostat.decreaseTemperature();
+    }
+    expect(thermostat.currentEnergyUsage()).toEqual("low-usage")
+    })
 
+    it("shows medium usage when temp is below 25", function() {
+      for (var i = 0; i < 4; i++) {
+        thermostat.increaseTemperature();
+      }
+      expect(thermostat.currentEnergyUsage()).toEqual("medium-usage")
+    })
+
+    it("shows high usage when temp is above 25", function() {
+      thermostat.turnPowerSavingOff();
+
+      for (var i = 0; i < 6; i++) {
+        thermostat.increaseTemperature();
+      }
+
+      expect(thermostat.currentEnergyUsage()).toEqual("high-usage")
+    })
 });
