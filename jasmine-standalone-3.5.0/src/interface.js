@@ -18,8 +18,19 @@ $(document).ready(function() {
     updateTemperature();
   })
 
+  $('#powersave').on('click', function(){
+    thermostat.turnPowerSavingOff();
+    updateTemperature();
+  })
+
 function updateTemperature() {
   $('#temperature').text(thermostat.temperature);
-
+  $('#temperature').attr('class', thermostat.currentEnergyUsage())
   }
+
+  $.get('http://api.openweathermap.org/data/2.5/weather?q=London,uk&appid=31c50239396d81ea3e312fc1c9c788ab&units=metric', function(data){
+    $("#current-temperature").text(data.main.temp);
+  })
+
+
 });
