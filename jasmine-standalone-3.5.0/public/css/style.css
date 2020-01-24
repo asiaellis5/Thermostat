@@ -1,9 +1,36 @@
+@import url(https://fonts.googleapis.com/css?family=Righteous&effect=fire-animation);
+@import url(https://fonts.googleapis.com/css?family=Righteous&effect=ice);
+
 html,
 body{
-  font-family: 'Amatic SC', cursive;
+  font-family: 'Righteous', cursive;
   font-size: 40px;
   background-color: rgba(210, 218, 203, 0.801);
+  display: flex;
+  height: 100%;
+  width: 100%;
+  text-align: center;
 }
+
+#temperature {
+  font-size: 300px;
+  padding: 30px 0 0 0;
+}
+
+#left {
+  float: left;
+  height: 100%;
+  width: 50%;
+
+}
+
+#right {
+  float: right;
+  height: 100%;
+  width: 50%;
+
+}
+
 
 h2{
   margin-bottom: 1px;
@@ -91,7 +118,8 @@ input:checked + .slider:before {
 }
 
 .low-usage {
-  color: green;
+  color: blue;
+  background-color: blue;
 }
 
 .medium-usage {
