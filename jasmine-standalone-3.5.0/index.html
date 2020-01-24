@@ -16,32 +16,40 @@
 
     <div id="left">
       <div id="temperature" class=""></div>
+      <div id="bottom-left"></div>
         <button id="temperature-up">+</button>
         <h2>Temperature</h2>
         <button id="temperature-down">-</button>
+        <br>
         
-        
-        <h2>Reset</h2>
-        <button id="temperature-reset">reset</button>
+    
+        <button id="temperature-reset">Reset</button>
+        <br>
+        <br>
         <h2>Turn power saving mode off:</h2>
+        <br>
         <label class="switch">
           <input type="checkbox" id= "powersave">
           <span class="slider round"></span>
         </label>
         </div>
+        </div>
 
         <div id="right">
             <section>
-          <h2>Current Temperature London <span id="london"></span> °C</h2>
+          <div id= "current-temp"><h2>Current Temperature London <span id="london"></span> °C</h2></div>
         </section>
+      
         <br>
+        <div id="bottom-right">
         <section> 
-          Enter a city:
+          <h1>Enter a city:</h1>
             <input id="current-city" type="text" placeholder="Enter a city"></input>
-            <input type="submit"></input>
+            <input id="submit" type="submit"></input>
           </form>
           <h1>Current temperature: <span id="current-temperature">0</span> °C</h1>
         </section>
+        </div>
       </div>
     
       <script src="src/thermostat.js"></script>
@@ -51,6 +59,10 @@
 
   <audio id="audioHot">
     <source src="public/audio/Drop.m4a" type="audio/mpeg">
+  </audio>
+
+  <audio id="button">
+    <source src="public/audio/zapsplat_multimedia_button_press_plastic_click_004_36871.mp3" type="audio/mpeg">
   </audio>
 
 </html>

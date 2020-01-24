@@ -23,11 +23,13 @@ $(document).ready(function() {
   $('#temperature-reset').on('click', function(){
     thermostat.reset();
     updateTemperature();
+    $('#button').trigger('play');
   })
 
   $('#powersave').on('click', function(){
     thermostat.turnPowerSavingOff();
     updateTemperature();
+    $('#button').trigger('play');
     if (thermostat.temperature > 24) {
       updateFire()
     }

@@ -5,7 +5,7 @@ html,
 body{
   font-family: 'Righteous', cursive;
   font-size: 40px;
-  background-color: rgba(210, 218, 203, 0.801);
+  background: linear-gradient(rgb(47,150,163), rgb(48,62,143));
   display: flex;
   height: 100%;
   width: 100%;
@@ -31,6 +31,14 @@ body{
 
 }
 
+#current-temp {
+  padding: 100px 0 0 0;
+}
+
+#bottom-right{
+  padding: 100px 0 0 0;
+}
+
 
 h2{
   margin-bottom: 1px;
@@ -47,16 +55,26 @@ h1{
 } 
 
 button {
-  background-color: rgb(141, 0, 118);
-   border: none;
-  color: white;
-  padding: 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-   font-size: 16px;
-  margin: 4px 2px;
+  background: none;
+  border: none;
+  font-size: 100px;
+  font-family: 'Righteous'
+
  }
+
+ #current-city {
+  background: none;
+  border: none;
+  font-size: 30px;
+  font-family: 'Righteous'
+}
+
+#submit {
+  background: none;
+  border: none;
+  font-size: 30px;
+  font-family: 'Righteous'
+}
 
  .switch {
   position: relative;
@@ -78,7 +96,7 @@ button {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #ccc;
+  background-color: white;
   -webkit-transition: .4s;
   transition: .4s;
 }
@@ -90,13 +108,13 @@ button {
   width: 26px;
   left: 4px;
   bottom: 4px;
-  background-color: white;
+  background-color: black;
   -webkit-transition: .4s;
   transition: .4s;
 }
 
 input:checked + .slider {
-  background-color: rgb(141, 0, 118);
+  background-color: grey;
 }
 
 input:focus + .slider {
@@ -118,8 +136,7 @@ input:checked + .slider:before {
 }
 
 .low-usage {
-  color: blue;
-  background-color: blue;
+  color: black;
 }
 
 .medium-usage {
@@ -129,3 +146,4 @@ input:checked + .slider:before {
 .high-usage {
   color: red;
 }
+
