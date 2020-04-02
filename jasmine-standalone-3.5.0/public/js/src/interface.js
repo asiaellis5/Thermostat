@@ -2,7 +2,7 @@ $(document).ready(function() {
   var thermostat = new Thermostat() 
 
   updateTemperature();
-
+ 
   $("#temperature-up").on('click', function() {
     thermostat.increaseTemperature();
     updateTemperature();
@@ -39,6 +39,24 @@ function updateTemperature() {
   $('#temperature').text(thermostat.temperature);
   $('#temperature').attr('class', thermostat.currentEnergyUsage())
   }
+
+// function updateTemperature() {
+//   $.ajax({
+//     type: 'POST',
+//     url: 'http://localhost:9292/thermostat',
+//     dataType: 'json',
+//     success: function(data){
+//       temp = data.temperature;
+//       console.log(temp)
+//       $('#temperature').text(thermostat.temperature);
+//       $('#temperature').attr('class', thermostat.currentEnergyUsage())
+//       $('#temperature-up').attr('value', thermostat.temperature)
+//     },
+//     error: function(){
+//       alert('Oh no it didnt work!')
+//     }
+//   })
+//   }
 
   $('#current-city').change(function() {
     var city = $('#current-city').val();

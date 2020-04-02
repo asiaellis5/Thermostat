@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="./css/style.css">
+  
+  <title>Thermostat</title>
+</head>
+
+<body>
+  <section>
+
+    <div id="left">
+      <div id="temperature" class=""><%= @temp %></div>
+      <div id="bottom-left"></div>
+      <form action='/thermostat' method='post'>
+        <button name="temp" id="temperature-up" value="">+</button><button name="temp" id="temperature-down">-</button>
+        <br>
+        
+    
+        <button name="temp" id="temperature-reset">Reset</button>
+        </form>
+        <br>
+        <br>
+        <h2>Turn power saving mode off:</h2>
+        <br>
+        <label class="switch">
+          <input type="checkbox" id= "powersave">
+          <span class="slider round"></span>
+        </label>
+        </div>
+        </div>
+
+        <div id="right">
+            <section>
+          <div id= "current-temp"><h2>Current Temperature London <span id="london"></span> °C</h2></div>
+        </section>
+      
+        <br>
+        <div id="bottom-right">
+        <section> 
+          <h1>Enter a city:</h1>
+            <input id="current-city" type="text" placeholder="Enter a city">
+            <input id="submit" type="submit">
+          </form>
+          <h1>Current temperature: <span id="current-temperature">0</span> °C</h1>
+        </section>
+        </div>
+      </div>
+    
+      <script src="js/src/thermostat.js"></script>
+      <script src="js/src/interface.js"></script>
+   </section>
+  </body>
+
+  <%# <audio id="audioHot">
+    <source src="public/audio/Drop.m4a" type="audio/mpeg">
+  </audio>
+
+  <audio id="button">
+    <source src="public/audio/zapsplat_multimedia_button_press_plastic_click_004_36871.mp3" type="audio/mpeg">
+  </audio> %>
+
+</html>
